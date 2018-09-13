@@ -1,0 +1,50 @@
+        //STRING
+        get/set
+
+        setex ustawia klucz z parametrem ile ma zyc
+
+        ttl [klucz] czas życia
+
+        setnx ustawia klucz jak juz jest to nie nadpisuje
+
+        flushall kasuje wszystkie klucze
+
+        strlen [key] pokazuje dlugosc stringu
+
+        mset [key] [value] [key] [value]  multisite dla wartosci
+
+        psetex  podaje sie czas w milisekundach jak setnx
+
+        decr [klucz].  obniza o 1 jak i--
+        incr [klucz] podnosi o 1 jak i++
+
+
+        incrby [key] 23  Podnosi o 23, to samo dla decrby
+
+        append  [key] " doklejenie do klucza"
+
+        // HASH
+
+        hmset stu1 name max age 15 class 8 ///// hash key set value jak array
+
+        hget stu1 name
+
+        hgetall stu1. [to jest key]
+
+        hexists stu-1 testfieldd czy istnije dana wartosc w hasu o kluczu stu-1 daje 0/1
+
+        hdel stu-1 class. Usuwa z hasha tylko 1 wartosc
+
+        hsetnx sprawdza czy istnieje jak nie to wstawia jak istnieje to fail
+
+        Szukanie kluczy daje hkeys stu-1
+
+        hincrby stu-1 age 2. Zwieksza o 2 wielkosc
+
+        hvals stu-1. Daje wszystkie wartosci z hasha
+
+        hlen stu-1  daje ilosc pol w hasu
+
+        hmget stu-1 name
+
+        /////////////LISTS
