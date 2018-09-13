@@ -1,4 +1,10 @@
+        redis-cli monitor  pokazuje co sie dzieje podczas komend
+
+        Unikalne klucze nawet jak rozne typy
+
         //STRING
+
+
         get/set
 
         setex ustawia klucz z parametrem ile ma zyc
@@ -25,26 +31,111 @@
 
         // HASH
 
-        hmset stu1 name max age 15 class 8 ///// hash key set value jak array
+        hmset key name max age 15 class 8 ///// hash key set value jak array
 
-        hget stu1 name
+        hget key name
 
-        hgetall stu1. [to jest key]
+        hgetall key [to jest key]
 
-        hexists stu-1 testfieldd czy istnije dana wartosc w hasu o kluczu stu-1 daje 0/1
+        hexists key testfieldd czy istnije dana wartosc w hasu o kluczu key daje 0/1
 
-        hdel stu-1 class. Usuwa z hasha tylko 1 wartosc
+        hdel key class. Usuwa z hasha tylko 1 wartosc
 
         hsetnx sprawdza czy istnieje jak nie to wstawia jak istnieje to fail
 
-        Szukanie kluczy daje hkeys stu-1
+        Szukanie kluczy daje hkeys key
 
-        hincrby stu-1 age 2. Zwieksza o 2 wielkosc
+        hincrby key age 2. Zwieksza o 2 wielkosc
 
-        hvals stu-1. Daje wszystkie wartosci z hasha
+        hvals key. Daje wszystkie wartosci z hasha
 
-        hlen stu-1  daje ilosc pol w hasu
+        hlen key  daje ilosc pol w hasu
 
-        hmget stu-1 name
+        hmget key name
 
         /////////////LISTS
+
+        lpush key value    dodaj od lewej od glowy
+
+        lrange key 0 9 liczy od zera jak array i listuje co jest  jak dam jako drugi parametr -1 to da cala liste
+
+        lpop key  usuwa wartosc 1 od lewej od glowy
+        
+        rpush key value od prawej od ogona
+        
+        rpop  key usuwa wartosc 1 od prawej od ogona
+
+        llen key  daje dlugosc listy
+
+        lindex key index   daje wartosc po index ale jak array od zero
+
+        lset key index value  dodaje w miejsce gdzie chce w liscie tylko z zakresu
+
+        lpushx key value  doda jezeli istnije klucz jak nie to fail
+
+        linsert key BEFORE|AFTER pivot value   gdzie pivot jest wartoscia w liscie
+
+        /////////////SETS
+
+
+        sadd key values   tworzymy set UNIQUE mozna tez dodawac kolejne
+
+        smembers key  daje wartosci setu
+
+        scard key  poda ilosc w secie
+
+        sdiff key key  podaje roznice miedzy dwoma setami co jest w 1 secie a nie jest w 2
+
+        sdiffstore newKey   key key tworzy nowy set z roznica w nowym secie
+
+        sunuion key key  laczy sety robi unie
+
+        sunionstore newKey key key nowy set z uni
+
+        srem key member usuwa z setu wartosc podajac membera czy jego wartosc mozna usuwac kilka
+
+        spop key count usuwa randomowa ilosc z setu podajemy counta ile mam wywalic
+
+        sinter key key podaje wartosci te co sa w dwoch setach
+
+        sinterstore newKey key key robimy intersekta z dwoch setow w nowym
+
+        smove source destination member przenosi membera z jednego seta do drugiego
+
+
+        ////////// SORTED SETS
+
+        zadd key score value  dodajemy dla klucza punkty sortowania wartosc mozna podac kilka
+
+        zrange key start stop [mozna podac czy z scorem ] pokazuje wszystkie dane
+
+        zcard key podaje ile jest memberow w secie
+
+        zcount key min max   liczy ilosc danych w range ale min max jest scorem
+
+        zrem key member usuwa z sorta set dana ale podajemy membera wartosc a nie score aby go usunac
+
+        zrank key member  daje index z danej wartosci
+
+        zrevrank key member podaje index ale od tylu najwieksza wartosc ma index 0 (odworcone rangi)
+
+        zscore key member podaje score dla danego membera
+
+        zrangebyscore key min max  podaje wartosci z danym score
+
+        mozna dodawac kilka memberow o tym samym score
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
