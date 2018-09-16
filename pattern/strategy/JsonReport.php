@@ -16,6 +16,7 @@ class JsonReport implements ReportTypeInterface
        if($this->jsonData) {
            header("Content-type: text/plain");
            header("Content-Disposition: attachment; filename=jsonReport.txt");
+
            print $this->jsonData;
            exit;
        }

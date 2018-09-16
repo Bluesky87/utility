@@ -15,11 +15,15 @@ class XmlReport implements ReportTypeInterface
 
     public function saveToFile()
     {
-        header('Content-disposition: attachment; filename=xmlReport.xml');
-        header ("Content-Type:text/xml");
+        if($this->xmlData) {
+            header('Content-disposition: attachment; filename=xmlReport.xml');
+            header ("Content-Type:text/xml");
 
-        echo $this->xmlData;
-        exit;
+            echo $this->xmlData;
+            exit;
+        }
+        return null;
+
     }
 
 }
