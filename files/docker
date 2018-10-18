@@ -36,4 +36,14 @@ docker run -ti --rm --link server --name client [c.name] bash // link to exist c
 -----------------------------
 
 
+docker commit [code]  [name]:[tag]     pattern = companyName/name
+docker rmi [name]  | [name][tag]
+
+-------VOLUMES----SHARE-DATA-------
+
+
+docker run -ti -v /path/to/:folder [name] bash
+
+1.docker run -ti -v /shared-data [name] bash <make data folder>
+2.docker run -ti --volumes-from [machine-name] bash
 
