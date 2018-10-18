@@ -1,0 +1,39 @@
+docker exec -ti [name] bash - attach to exist container
+docker run --rm -ti ubuntu bash -c "sleep 3; echo all done;"
+docker attach [name]
+docker ps -l list
+docker commit [code, name] name
+docker tag [code,name] [tag]
+
+
+docker run --name test -d ubuntu bash -c   | detach  command
+docker logs test  | check what was wrong
+
+docker kill container_name
+docker rm container_name
+
+docker run --memory maximum-allowed-memory [image-name] [command]
+
+docker run --cpu-shares
+docker run --cpu-quota
+
+------ private network ------
+
+docker run --rm -ti -p 45678:45678 -p 45679:45679 --name server1 ubuntu bash
+nc -lp 45678 | nc -lp 45679
+nc localhost 45678
+
+docker port [name]
+
+docker run -ti --rm --link server --name client [c.name] bash // link to exist container using name
+
+---never break -----
+
+1.  docker network create testNetwork
+2.  docker run --rm -ti --net=testNetwork --name server  ubuntu bash  -> nc -lp 1234
+3.  docker run --rn -ti --net=testNetwork --name client ubuntu bash    -> nc server 1234
+
+-----------------------------
+
+
+

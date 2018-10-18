@@ -23,7 +23,6 @@ class XmlReport implements ReportTypeInterface
             exit;
         }
         return null;
-
     }
 
 }
