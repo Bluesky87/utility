@@ -47,3 +47,27 @@ docker run -ti -v /path/to/:folder [name] bash
 1.docker run -ti -v /shared-data [name] bash <make data folder>
 2.docker run -ti --volumes-from [machine-name] bash
 
+---DOCKER FILE-----
+
+MAINTAINER fname lname <mail>
+
+FROM image
+RUN cmd
+ADD project.tar.gz /install/
+ADD https://test.com /project/
+ENV DB_PORT=5432
+
+ENTRYPOINT specifies the start of the command to run
+CMD specifies the whole command to run
+EXPOSE 8080  || same like -p 1234 in line
+VOLUME ["/shared-data"]
+VOLUME ["/host/path" "/container/path/"]
+
+docker build -t [name]
+
+
+make some image with all credential then name image and copy FROM ubuntu:last as bigData
+FROM alpine
+COPY --from=biData /test /test
+
+
