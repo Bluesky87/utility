@@ -47,6 +47,10 @@ docker run -ti -v /path/to/:folder [name] bash
 1.docker run -ti -v /shared-data [name] bash <make data folder>
 2.docker run -ti --volumes-from [machine-name] bash
 
+
+
+docker run -ti mount type=bind,source=/tmp,target=/test [name] bash
+
 ---DOCKER FILE-----
 
 MAINTAINER fname lname <mail>
@@ -70,4 +74,18 @@ make some image with all credential then name image and copy FROM ubuntu:last as
 FROM alpine
 COPY --from=biData /test /test
 
+
+-----inspect---
+
+docker inspect --format '{{.State.Pid}}' [container name]
+
+
+---restart--
+
+docker run -d -p 1234:1234 --restart=always --name registry registry:2
+
+---save--load--
+docker save -o my-images.tar.gz test1 test2
+docker load -i my-images.tar.gz
+------
 
