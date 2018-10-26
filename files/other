@@ -1,0 +1,4 @@
+git log --graph --all --decorate --oneline
+squash all under him
+fixup change name
+git rebase -i HEAD~3  
