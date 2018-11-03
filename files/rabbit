@@ -2,3 +2,7 @@
 https://github.com/php-amqplib/php-amqplib/blob/master/demo/amqp_publisher.php
 
 queue_declare($queue, 'error if exist name of queue' , 'back after restart', 'access in other channels, 'the queue won't be deleted once the channel is closed.')
+direct = loadbalance
+fanout = subs
+topic = hybrid
+header = direct2
