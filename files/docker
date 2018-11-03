@@ -89,3 +89,6 @@ docker save -o my-images.tar.gz test1 test2
 docker load -i my-images.tar.gz
 ------
 
+good dockerfile with cluster
+https://github.com/oprearocks/RabbitMQ-Docker-cluster
+
