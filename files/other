@@ -3,3 +3,4 @@ squash all under him
 fixup change name
 git rebase -i HEAD~3  
 https://stackoverflow.com/questions/22609257/how-do-i-enable-the-mysql-slow-query-log
+mytop -u Blue -p -d DB
