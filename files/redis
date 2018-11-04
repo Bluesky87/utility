@@ -1,3 +1,5 @@
+        
+        config  // AOF (file) / RDB (snapshot) (default) restart wiht link to config file
         redis-cli monitor  pokazuje co sie dzieje podczas komend
 
         Unikalne klucze nawet jak rozne typy
