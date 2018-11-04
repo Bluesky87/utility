@@ -5,9 +5,7 @@
         Unikalne klucze nawet jak rozne typy
 
         //STRING
-
-
-        get/set
+        getset key value / wyrzuca poprzednia wartosc dodatkowo
 
         setex ustawia klucz z parametrem ile ma zyc
 
@@ -16,17 +14,24 @@
         setnx ustawia klucz jak juz jest to nie nadpisuje
 
         flushall kasuje wszystkie klucze
+        
+        exists key  true/false
+        
+        del key
+      
+        set key value ex 10 // ustawiamy na 10 sekund
+        
+          expire key 5 // ustawia klucz na 5 sekund isniejacy
 
         strlen [key] pokazuje dlugosc stringu
 
         mset [key] [value] [key] [value]  multisite dla wartosci
-
+        
+        mget key key key
         psetex  podaje sie czas w milisekundach jak setnx
 
         decr [klucz].  obniza o 1 jak i--
         incr [klucz] podnosi o 1 jak i++
-
-
         incrby [key] 23  Podnosi o 23, to samo dla decrby
 
         append  [key] " doklejenie do klucza"
