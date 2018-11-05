@@ -141,6 +141,33 @@
         mozna dodawac kilka memberow o tym samym score
 
 
+        -------MASTER/SLAVE
+        start src/redis-server redis.conf
+
+        slave setting
+
+        change
+        appendfilename,
+        port,
+        #slaveof 127.0.0.1 6379   -> replication master data
+
+        ------
+        requirepass qwas master
+        masterauth  qwas slave
+
+        src/redis-cli -a [password]
+
+        ---done-----
+
+
+        CONFIG SET SAVE "60 1" snapshot  at cli on working but after stop is revert
+
+
+        ----PUBSUB-----
+
+        subscribe message news  (2xkey) 1instance cli
+
+        publish message "test" 2instance cli
 
 
 
