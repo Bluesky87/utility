@@ -48,7 +48,7 @@
 
         hdel key class. Usuwa z hasha tylko 1 wartosc
 
-        hsetnx sprawdza czy istnieje jak nie to wstawia jak istnieje to fail
+        hset  nx sprawdza czy istnieje jak nie to wstawia jak istnieje to fail
 
         Szukanie kluczy daje hkeys key
 
@@ -58,7 +58,7 @@
 
         hlen key  daje ilosc pol w hasu
 
-        hmget key name
+        hmget key name name name multiply from obj
 
         /////////////LISTS
 
@@ -90,6 +90,10 @@
         smembers key  daje wartosci setu
 
         scard key  poda ilosc w secie
+        
+        sismembers key value  1/0 czy jest takie w secie
+        
+        sadd key:value(value znajduje sie w secie i do niej dodajemy elemety) value1 value2
 
         sdiff key key  podaje roznice miedzy dwoma setami co jest w 1 secie a nie jest w 2
 
@@ -101,7 +105,9 @@
 
         srem key member usuwa z setu wartosc podajac membera czy jego wartosc mozna usuwac kilka
 
-        spop key count usuwa randomowa ilosc z setu podajemy counta ile mam wywalic
+        spop key count usuwa randomowa ilosc z setu podajemy counta ile mam wywalic / bez wpisania wywala ostatni
+        
+        scard key ile elementow w secie
 
         sinter key key podaje wartosci te co sa w dwoch setach
 
@@ -114,7 +120,7 @@
 
         zadd key score value  dodajemy dla klucza punkty sortowania wartosc mozna podac kilka
 
-        zrange key start stop [mozna podac czy z scorem ] pokazuje wszystkie dane
+        zrange key start stop [withscores] pokazuje wszystkie dane
 
         zcard key podaje ile jest memberow w secie
 
@@ -129,6 +135,8 @@
         zscore key member podaje score dla danego membera
 
         zrangebyscore key min max  podaje wartosci z danym score
+        
+        zrangebyscore key -inf [score] od danego scora
 
         mozna dodawac kilka memberow o tym samym score
 
