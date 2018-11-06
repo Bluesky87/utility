@@ -1,4 +1,5 @@
 git log --graph --all --decorate --oneline
+git merge --no-ff see history
 squash all under him
 fixup change name
 git rebase -i HEAD~3  
