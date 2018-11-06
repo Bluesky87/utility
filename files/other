@@ -3,5 +3,10 @@ git merge --no-ff see history
 squash all under him
 fixup change name
 git rebase -i HEAD~3  
+
+v/b/phpunit tests/file.php
+v/b/phpunit tests --filter=testNAME (name of test)
+v/b/phpunit tests --filter=ClassName::methodName
+
 https://stackoverflow.com/questions/22609257/how-do-i-enable-the-mysql-slow-query-log
 mytop -u Blue -p -d DB
