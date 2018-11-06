@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit
+        colors="true"
+        processIsolation="false"
+        stopOnFailure="false"
+>
+    <php>
+        <ini name="memory_limit" value="-1"/>
+        <ini name="apc.enable_cli" value="1"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="app">
+            <directory>./test</directory>
+        </testsuite>
+        <testsuite name="calc">
+            <directory>./test</directory>
+            <exclude>./someDir</exclude>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhiteList="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log
+                type="coverage-html"
+                target="./tmp/coverage/html/"
+                lowUpperBound="60"
+                highLowerBound="90"
+        />
+        <log
+                type="coverage-clover"
+                target="./coverage/clover.xml"
+        />
+    </logging>
+</phpunit>

@@ -7,6 +7,8 @@ git rebase -i HEAD~3
 v/b/phpunit tests/file.php
 v/b/phpunit tests --filter=testNAME (name of test)
 v/b/phpunit tests --filter=ClassName::methodName
+v/b/phpunit testsuite=app
+v/b/phpunit testsuite=app --filter=methodName
 
 https://stackoverflow.com/questions/22609257/how-do-i-enable-the-mysql-slow-query-log
 mytop -u Blue -p -d DB
