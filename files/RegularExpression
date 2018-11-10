@@ -1,6 +1,12 @@
 -g global flag many use 
+/m multi-line  mode ^$ work with don't care about new line
 
 ----BASE---------
+^  start
+$ end
+\A start of string never end of line
+\Z end of string never end of line
+
 . all chars
 [abc.xyz]  in set . is not all char but simple dot .
 \. escape charakter
@@ -44,7 +50,26 @@ greedy default
 
 ---GROUPS-----
 
+(abc)+  abcabcabc
+(in)?test = intest, test
+(abc){3} 3x abc
 
+--------------
+| or
+(test|abc)
+(aa|bb|cc){3} aaaacc
+left prefer performance
+--------------
+
+/b word boundary
+/B not word boundary
+
+boundary between strings abc cde
+
+/\B\w+\B/  This is test = hi es
+
+
+/1 /2 reference to catch smth
 
 
 
