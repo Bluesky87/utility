@@ -59,7 +59,7 @@ greedy default
 (test|abc)
 (aa|bb|cc){3} aaaacc
 left prefer performance
---------------
+-------boudary-------
 
 /b word boundary
 /B not word boundary
@@ -68,14 +68,24 @@ boundary between strings abc cde
 
 /\B\w+\B/  This is test = hi es
 
+-----reference group-------
+/1 /2 reference to group
 
-/1 /2 reference to catch smth
-
-<(i|em)>.+?</\1> reference to (i|em)
-
-
+<(i|em)>.+?</\1> reference to group (i|em)
+-----------
+ (?:test) (test)  \1 is secound group coz
+ ?: no capturing group == speed, limit 9,99sometimes
  
+ 
+ ------LOOKAROUND----------------
+?=   POSITIVE
+/(?=seashore)sea/ matches "sea" but not "seaside"
 
+/(?=seashore)sea/ == /sea(?=shore)/   speed different
+match only sea 
+seashore ONLY "sea" NOT ALL seashore,
+
+\b[A-Za-z]+\b(?=,) find word before , without ","
 
 
 
