@@ -1,0 +1,59 @@
+-g global flag many use 
+
+----BASE---------
+. all chars
+[abc.xyz]  in set . is not all char but simple dot .
+\. escape charakter
+\t tab
+\r \n \r\n new line
+
+[abc]  find a b c but not abc  SINGLE!
+[0-9] range but one
+[A-Za-z]
+[50-99] its 5 0-9 and 9 not increment same like [0-9]
+^ negate a character set
+[^abc] not abc
+/see[^mn]/ matches "see " but not "see"
+
+-------SHORT------
+\d [0-9]
+\w [a-zA-Z0-9_]
+\s [ \t\r\n]
+\D [^0-9]
+\W [^a-zA-Z0-9_]
+\S [^ \t\r\n]
+
+-----REPETITION------
+
+* zero or more time
++ one or more time
+? zero or one time
+
+{min,max} repeat
+\d{4,8}
+\d{4} exactly 4 time
+\d{4,} min 4 and infinite
+
+---strategy--
+greedy default
+? lazy
+/apples??/ prefere lazy so take apple coz lazy
+ /.*?[0-9]*?/ ,match nothing coz lazy all optional !!!
+*?
++?
+
+---GROUPS-----
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
