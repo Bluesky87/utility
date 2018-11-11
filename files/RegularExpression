@@ -87,9 +87,24 @@ seashore ONLY "sea" NOT ALL seashore,
 
 \b[A-Za-z]+\b(?=,) find word before , without ","
 
+?! NEGATIVE 
+/(?!regex)/
 
+/(?!seashore)sea/ matches "sea" but not "seashotre"
+/(?!seashore)sea/ == /sea(?!shore)/
 
+Lookbehind
+?<= positive lookbehind assetion
+?<! negative lookbehind assertion
 
+/(?<=base)ball/ matches "ball" in "baseball" but not "football"
+
+----------------------------
+Unicode  \u 
+/caf\u[here unicode for ę] matches "cafę" but not "cafe"
+php \x
+unicode wildcard: \X
+/caf\X/ match cafe and cafę
 
 
  
