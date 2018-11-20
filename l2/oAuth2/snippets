@@ -1,0 +1,25 @@
+Laravel
+php artisan make:auth
+composer require laravel/passport
+php artisan migrate
+php artisan passport:install
+
+User.php
+add trait HasApiTokens
+
+RouteServiceProvider.php
+pf map()
+Passport::routes();
+
+auth.config
+api-> driver->passport
+
+New clinet php artisan passport:client
+htttp/1:8001/callback
+
+create client api full service
+composer create-project --prefer-dist laravel/laravel server
+guzzle
+web route
+
+
