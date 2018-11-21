@@ -1,0 +1,63 @@
+$dsn = 'mysql:host=localhost;dbname=test;port=3307';
+$db = new PDO($dns,'user','pass');
+--
+$db->query($sql) as $row
+fetch() gets next row from a result
+fetchAll() creates an array with all rows PDO::FETCH_ASSOC
+fetchColumn() gets single column from next row
+fetchObject() gets the next row as an obj
+$result = $db->query($sql);
+$result->fetch();
+$result->rowCount(); not always work
+-----
+$row = $result->fetch(); if(!$row) -> do while
+----
+$result = $db->exec($sql); insert update delete
+in result info // we can use $db->lastInsertId()
+--- error--
+$db->errorInfo(); or $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+then in try cache will work $e->getMessage();
+-----
+$stmt = $db->prepere($sql);
+$stmt->bindValue(expr)
+$stmt->bindParam(':test', $t);
+$stmt->execute();
+$stmt->fetch() normaly
+we can use ? in query then
+$stmt->bindParam(1,$t); important order!
+we can put in execute(array);imp order
+-----
+$stmt->execute();
+$stmt->bindColumn(1, $name);
+$stmt->bindColumn('id', $id);
+$stmt->fetch(PDO::FETCH_BOUND);
+--- trans
+
+$db->beginTransaction();
+$w1 = $stmt1->execute();
+$stmt2->execute();
+if(!$w1){
+$db->rollBack();
+}
+$db->commit();
+always try catch!
+in many sql sometimes we need to use
+$w1->closeCursor(); clean !
+------
+$res->fetchAll(PDO::FETCH_KEY_PAIR) nice array
+------
+into obj
+$stmt->execute(array($id);
+$stmt->setFetchMode(PDO::FETCH_INTO,$obj);
+$stmt->fetch();
+------2-
+create obj from db
+$stmt->execute(array($id);
+$stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,'className', array($id));
+$obj = $stmt->fetch()
+
+
+
+
+
+
