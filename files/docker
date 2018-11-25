@@ -4,7 +4,7 @@ docker attach [name]
 docker ps -l list
 docker commit [code, name] name
 docker tag [code,name] [tag]
-
+docker rm @(docker ps -aq) remove stoped con
 
 docker run --name test -d ubuntu bash -c   | detach  command
 docker logs test  | check what was wrong
