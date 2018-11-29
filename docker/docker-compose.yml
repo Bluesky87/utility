@@ -1,11 +1,12 @@
 version: '3'
 services:
   php-apache:
-    build: .
+    build:
+      context: .
     ports:
     - 8001:80
     volumes:
-    - /Users/grzegorzkasperek/Sites/utility/docker/index.html:/var/www/html/index.html
+    - ./index.html:/var/www/html/index.html
 
   mariadb:
     image: mariadb:${MARIA_DB_VERSION}
@@ -22,6 +23,5 @@ services:
     ports:
     - 8002:80
     environment:
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
