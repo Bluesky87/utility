@@ -15,3 +15,28 @@ https://stackoverflow.com/questions/22609257/how-do-i-enable-the-mysql-slow-quer
 mytop -u Blue -p -d DB
 s4
 form_theme: 'bootstrap_3_layout.html.twig' ->config/packages/twig.yaml
+
+
+$xml = simplexml_load_file('Textxml.xml');
+var_dump($xml->prod->brand);exit;
+////////////////////////
+
+$xml = new XMLReader();
+$xml->open('Textxml.xml');
+
+while($xml->read())
+{
+    if($xml->nodeType == XMLREADER::ELEMENT && $xml->localName == 'desc') {
+        $xml->read();
+        var_dump($xml->value);
+    }
+}
+
+$xml->close();
+/////////////////////////////
+
+$element = new SimpleXMLElement('Textxml.xml',null, true);
+
+foreach($element->prod as $product) {
+    var_dump($product->pId);
+}
